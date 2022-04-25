@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CustomerService } from './customer.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'services';
+  customers:any;
+  constructor(private customer: CustomerService){
+    
+   this.customers=customer.users();
+  }
 }
